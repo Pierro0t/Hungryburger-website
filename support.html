@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - Hungry Burger</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #4a2c0a 0%, #7a4a1a 50%, #4a2c0a 100%);
+            color: #fef3c7; min-height: 100vh; line-height: 1.6;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+        .lang-switcher {
+            position: fixed; top: 20px; right: 20px;
+            display: flex; gap: 6px; z-index: 100;
+        }
+        .lang-btn {
+            padding: 8px 14px; border: 1px solid rgba(254, 243, 199, 0.3);
+            background: rgba(74, 44, 10, 0.9); color: #d4a056;
+            border-radius: 8px; cursor: pointer; font-size: 13px; font-weight: 500;
+            transition: all 0.3s ease; backdrop-filter: blur(10px);
+        }
+        .lang-btn:hover { border-color: rgba(251, 191, 36, 0.5); color: #fef3c7; }
+        .lang-btn.active {
+            background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
+            border-color: transparent; color: white;
+        }
+        header { text-align: center; margin-bottom: 50px; }
+        .logo {
+            width: 80px; height: 80px;
+            background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
+            border-radius: 20px; margin: 0 auto 20px;
+            display: flex; align-items: center; justify-content: center; font-size: 40px;
+        }
+        h1 {
+            font-size: 2.5rem; font-weight: 700; margin-bottom: 10px;
+            background: linear-gradient(135deg, #fbbf24 0%, #f87171 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .subtitle { color: #d4a056; font-size: 1.1rem; }
+        .card {
+            background: rgba(74, 44, 10, 0.8); border: 1px solid rgba(254, 243, 199, 0.1);
+            border-radius: 16px; padding: 30px; margin-bottom: 30px; backdrop-filter: blur(10px);
+        }
+        .card h2 { font-size: 1.5rem; margin-bottom: 20px; color: #fef3c7; }
+        .card p { color: #d4a056; margin-bottom: 15px; }
+        .contact-method {
+            display: flex; align-items: center; gap: 15px; padding: 20px;
+            background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.2);
+            border-radius: 12px; margin-top: 20px; transition: all 0.3s ease;
+        }
+        .contact-method:hover { background: rgba(245, 158, 11, 0.15); border-color: rgba(245, 158, 11, 0.3); }
+        .contact-icon {
+            width: 50px; height: 50px;
+            background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
+            border-radius: 12px; display: flex; align-items: center; justify-content: center;
+            font-size: 24px; flex-shrink: 0;
+        }
+        .contact-info h3 { font-size: 1.1rem; color: #fef3c7; margin-bottom: 5px; }
+        .contact-info a { color: #fbbf24; text-decoration: none; font-size: 1rem; }
+        .contact-info a:hover { text-decoration: underline; }
+        .response-time {
+            display: inline-block; background: rgba(34, 197, 94, 0.1);
+            border: 1px solid rgba(34, 197, 94, 0.2); color: #4ade80;
+            padding: 8px 16px; border-radius: 20px; font-size: 0.9rem; margin-top: 15px;
+        }
+        .faq-item { border-bottom: 1px solid rgba(254, 243, 199, 0.1); padding: 20px 0; }
+        .faq-item:last-child { border-bottom: none; padding-bottom: 0; }
+        .faq-item:first-child { padding-top: 0; }
+        .faq-item h3 { color: #fef3c7; font-size: 1.1rem; margin-bottom: 10px; }
+        .faq-item p { color: #d4a056; margin-bottom: 0; }
+        .card ul { color: #d4a056; margin-left: 20px; margin-top: 10px; }
+        .card li { margin-bottom: 8px; }
+        footer {
+            text-align: center; padding: 40px 20px; color: #a47a3a; font-size: 0.9rem;
+        }
+        footer a { color: #fbbf24; text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .card { padding: 20px; }
+            .contact-method { flex-direction: column; text-align: center; }
+            .lang-switcher { top: 10px; right: 10px; }
+            .lang-btn { padding: 5px 10px; font-size: 11px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="lang-switcher">
+        <button class="lang-btn" id="btn-fr" onclick="setLang('fr')">FR</button>
+        <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+    </div>
+
+    <div class="container">
+        <header>
+            <div class="logo">🍔</div>
+            <h1 data-fr="Support Hungry Burger" data-en="Hungry Burger Support"></h1>
+            <p class="subtitle" data-fr="Nous sommes là pour vous aider" data-en="We're here to help you"></p>
+        </header>
+
+        <div class="card">
+            <h2 data-fr="📧 Contactez-nous" data-en="📧 Contact Us"></h2>
+            <p data-fr="Notre équipe est disponible pour répondre à toutes vos questions concernant Hungry Burger." data-en="Our team is available to answer all your questions about Hungry Burger."></p>
+
+            <div class="contact-method">
+                <div class="contact-icon">✉️</div>
+                <div class="contact-info">
+                    <h3>Email</h3>
+                    <a href="mailto:music.music.music@hotmail.fr">music.music.music@hotmail.fr</a>
+                </div>
+            </div>
+            <div class="response-time" data-fr="⏱️ Réponse sous 24-48h" data-en="⏱️ Response within 24-48h"></div>
+        </div>
+
+        <div class="card">
+            <h2 data-fr="❓ Questions fréquentes" data-en="❓ Frequently Asked Questions"></h2>
+
+            <div class="faq-item">
+                <h3 data-fr="Comment jouer ?" data-en="How do I play?"></h3>
+                <p data-fr="Faites glisser votre doigt pour déplacer le burger à gauche ou à droite. Touchez l'écran pour tirer des frites sur les ennemis. Évitez les collisions !" data-en="Swipe your finger to move the burger left or right. Tap the screen to shoot fries at enemies. Avoid collisions!"></p>
+            </div>
+
+            <div class="faq-item">
+                <h3 data-fr="Comment fonctionne le power-up ?" data-en="How does the power-up work?"></h3>
+                <p data-fr="Quand vous détruisez un ennemi, un power-up vert peut apparaître (10% de chance). Attrapez-le pour activer le tir rapide triple pendant 5 secondes !" data-en="When you destroy an enemy, a green power-up may appear (10% chance). Catch it to activate triple rapid fire for 5 seconds!"></p>
+            </div>
+
+            <div class="faq-item">
+                <h3 data-fr="Comment fonctionne le score ?" data-en="How does scoring work?"></h3>
+                <p data-fr="Les ennemis normaux valent 1 point. Les ennemis rapides (rouges) valent 3 points. Votre meilleur score est sauvegardé automatiquement sur votre appareil." data-en="Normal enemies are worth 1 point. Fast enemies (red) are worth 3 points. Your high score is automatically saved on your device."></p>
+            </div>
+
+            <div class="faq-item">
+                <h3 data-fr="L'application collecte-t-elle mes données ?" data-en="Does the app collect my data?"></h3>
+                <p data-fr="Non. Hungry Burger ne collecte aucune donnée personnelle. Votre score est stocké uniquement sur votre appareil. Consultez notre <a href='privacy.html' style='color:#fbbf24'>Politique de Confidentialité</a>." data-en="No. Hungry Burger does not collect any personal data. Your score is stored only on your device. See our <a href='privacy.html' style='color:#fbbf24'>Privacy Policy</a>."></p>
+            </div>
+
+            <div class="faq-item">
+                <h3 data-fr="L'application fonctionne-t-elle hors ligne ?" data-en="Does the app work offline?"></h3>
+                <p data-fr="Oui, Hungry Burger fonctionne entièrement hors ligne. Aucune connexion internet n'est nécessaire." data-en="Yes, Hungry Burger works entirely offline. No internet connection is needed."></p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2 data-fr="🐛 Signaler un bug" data-en="🐛 Report a Bug"></h2>
+            <p data-fr="Vous avez rencontré un problème ? Envoyez-nous un email avec :" data-en="Encountered an issue? Send us an email with:"></p>
+            <ul>
+                <li data-fr="Une description du problème" data-en="A description of the issue"></li>
+                <li data-fr="Les étapes pour reproduire le bug" data-en="Steps to reproduce the bug"></li>
+                <li data-fr="Votre modèle d'appareil et version iOS" data-en="Your device model and iOS version"></li>
+                <li data-fr="Une capture d'écran si possible" data-en="A screenshot if possible"></li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2017-2026 Hungry Burger — Lorenzini Pierre</p>
+        <p>
+            <a href="privacy.html" data-fr="Politique de Confidentialité" data-en="Privacy Policy"></a>
+            ·
+            <a href="terms.html" data-fr="Conditions d'utilisation" data-en="Terms of Use"></a>
+            ·
+            <a href="index.html" data-fr="Accueil" data-en="Home"></a>
+        </p>
+    </footer>
+
+    <script>
+        const LANGS = ['fr', 'en'];
+        function setLang(lang) {
+            localStorage.setItem('hb-lang', lang);
+            document.documentElement.lang = lang;
+            LANGS.forEach(l => document.getElementById('btn-' + l).classList.toggle('active', l === lang));
+            document.querySelectorAll('[data-fr]').forEach(el => {
+                const text = el.getAttribute('data-' + lang);
+                if (text !== null) el.innerHTML = text;
+            });
+        }
+        function detectLang() {
+            const saved = localStorage.getItem('hb-lang');
+            if (saved && LANGS.includes(saved)) return saved;
+            const bl = navigator.language.substring(0, 2).toLowerCase();
+            return LANGS.includes(bl) ? bl : 'en';
+        }
+        setLang(detectLang());
+    </script>
+</body>
+</html>

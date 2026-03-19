@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Hungry Burger</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #4a2c0a 0%, #7a4a1a 50%, #4a2c0a 100%);
+            color: #fef3c7; min-height: 100vh; line-height: 1.6;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+        .lang-switcher {
+            position: fixed; top: 20px; right: 20px;
+            display: flex; gap: 6px; z-index: 100;
+        }
+        .lang-btn {
+            padding: 8px 14px; border: 1px solid rgba(254, 243, 199, 0.3);
+            background: rgba(74, 44, 10, 0.9); color: #d4a056;
+            border-radius: 8px; cursor: pointer; font-size: 13px; font-weight: 500;
+            transition: all 0.3s ease; backdrop-filter: blur(10px);
+        }
+        .lang-btn:hover { border-color: rgba(251, 191, 36, 0.5); color: #fef3c7; }
+        .lang-btn.active {
+            background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
+            border-color: transparent; color: white;
+        }
+        header { text-align: center; margin-bottom: 50px; }
+        .logo {
+            width: 80px; height: 80px;
+            background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
+            border-radius: 20px; margin: 0 auto 20px;
+            display: flex; align-items: center; justify-content: center; font-size: 40px;
+        }
+        h1 {
+            font-size: 2.5rem; font-weight: 700; margin-bottom: 10px;
+            background: linear-gradient(135deg, #fbbf24 0%, #f87171 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .subtitle { color: #d4a056; font-size: 1.1rem; }
+        .card {
+            background: rgba(74, 44, 10, 0.8); border: 1px solid rgba(254, 243, 199, 0.1);
+            border-radius: 16px; padding: 30px; margin-bottom: 30px; backdrop-filter: blur(10px);
+        }
+        .card h2 { font-size: 1.3rem; margin-bottom: 15px; color: #fbbf24; }
+        .card p { color: #d4a056; margin-bottom: 12px; }
+        footer {
+            text-align: center; padding: 40px 20px; color: #a47a3a; font-size: 0.9rem;
+        }
+        footer a { color: #fbbf24; text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .card { padding: 20px; }
+            .lang-switcher { top: 10px; right: 10px; }
+            .lang-btn { padding: 5px 10px; font-size: 11px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="lang-switcher">
+        <button class="lang-btn" id="btn-fr" onclick="setLang('fr')">FR</button>
+        <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+    </div>
+
+    <div class="container">
+        <header>
+            <div class="logo">🔒</div>
+            <h1 data-fr="Politique de Confidentialité" data-en="Privacy Policy"></h1>
+            <p class="subtitle">Hungry Burger</p>
+        </header>
+
+        <div class="card">
+            <p data-fr="<strong>Dernière mise à jour :</strong> 19 mars 2026" data-en="<strong>Last updated:</strong> March 19, 2026"></p>
+            <p data-fr="Hungry Burger est un jeu mobile développé par Lorenzini Pierre. Cette politique de confidentialité décrit comment nous traitons vos informations lorsque vous utilisez notre application." data-en="Hungry Burger is a mobile game developed by Lorenzini Pierre. This privacy policy describes how we handle your information when you use our application."></p>
+        </div>
+
+        <div class="card">
+            <h2 data-fr="📊 Collecte de données" data-en="📊 Data Collection"></h2>
+            <p data-fr="Hungry Burger <strong>ne collecte aucune donnée personnelle</strong>. Aucune création de compte n'est requise. Nous ne recueillons aucune information vous concernant." data-en="Hungry Burger <strong>does not collect any personal data</strong>. No account creation is required. We do not gather any information about you."></p>
+        </div>
+
+        <div class="card">
+            <h2 data-fr="💾 Stockage local" data-en="💾 Local Storage"></h2>
+            <p data-fr="L'application stocke uniquement votre meilleur score sur votre appareil via UserDefaults (système de stockage local d'Apple). Cette donnée <strong>ne quitte jamais votre appareil</strong> et n'est transmise à aucun serveur." data-en="The app only stores your high score on your device via UserDefaults (Apple's local storage system). This data <strong>never leaves your device</strong> and is not transmitted to any server."></p>
+        </div>
+
+        <div class="card">
+            <h2 data-fr="🔗 Services tiers" data-en="🔗 Third-Party Services"></h2>
+            <p data-fr="Hungry Burger <strong>n'utilise aucun service tiers</strong> d'analyse, de publicité ou de suivi. Aucun SDK externe n'est intégré dans l'application." data-en="Hungry Burger <strong>does not use any third-party</strong> analytics, advertising, or tracking services. No external SDK is integrated in the application."></p>
+        </div>
+
+        <div class="card">
+            <h2 data-fr="🌐 Réseau" data-en="🌐 Network"></h2>
+            <p data-fr="Hungry Burger <strong>n'effectue aucune requête réseau</strong>. L'application fonctionne entièrement hors ligne. Aucune donnée n'est envoyée ou reçue via Internet." data-en="Hungry Burger <strong>makes no network requests</strong>. The application works entirely offline. No data is sent or received via the internet."></p>
+        </div>
+
+        <div class="card">
+            <h2 data-fr="👶 Vie privée des enfants" data-en="👶 Children's Privacy"></h2>
+            <p data-fr="Hungry Burger ne collecte aucune donnée de quiconque, y compris les enfants de moins de 13 ans. L'application est adaptée à tous les âges." data-en="Hungry Burger does not collect any data from anyone, including children under 13. The application is suitable for all ages."></p>
+        </div>
+
+        <div class="card">
+            <h2 data-fr="✏️ Modifications" data-en="✏️ Changes"></h2>
+            <p data-fr="Nous pouvons mettre à jour cette politique de confidentialité occasionnellement. Toute modification sera publiée sur cette page avec une date de mise à jour révisée." data-en="We may update this privacy policy from time to time. Any changes will be posted on this page with a revised update date."></p>
+        </div>
+
+        <div class="card">
+            <h2 data-fr="📧 Contact" data-en="📧 Contact"></h2>
+            <p data-fr="Si vous avez des questions concernant cette politique de confidentialité, contactez-nous :" data-en="If you have questions about this privacy policy, contact us:"></p>
+            <p><strong>Email :</strong> <a href="mailto:music.music.music@hotmail.fr" style="color:#fbbf24">music.music.music@hotmail.fr</a></p>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2017-2026 Hungry Burger — Lorenzini Pierre</p>
+        <p>
+            <a href="support.html" data-fr="Support" data-en="Support"></a>
+            ·
+            <a href="terms.html" data-fr="Conditions d'utilisation" data-en="Terms of Use"></a>
+            ·
+            <a href="index.html" data-fr="Accueil" data-en="Home"></a>
+        </p>
+    </footer>
+
+    <script>
+        const LANGS = ['fr', 'en'];
+        function setLang(lang) {
+            localStorage.setItem('hb-lang', lang);
+            document.documentElement.lang = lang;
+            LANGS.forEach(l => document.getElementById('btn-' + l).classList.toggle('active', l === lang));
+            document.querySelectorAll('[data-fr]').forEach(el => {
+                const text = el.getAttribute('data-' + lang);
+                if (text !== null) el.innerHTML = text;
+            });
+        }
+        function detectLang() {
+            const saved = localStorage.getItem('hb-lang');
+            if (saved && LANGS.includes(saved)) return saved;
+            const bl = navigator.language.substring(0, 2).toLowerCase();
+            return LANGS.includes(bl) ? bl : 'en';
+        }
+        setLang(detectLang());
+    </script>
+</body>
+</html>
